@@ -238,6 +238,6 @@ traindata.load_csv('train_8k.csv')
 traindata.create_coco('annotations/instances_cars_train2018.json')
 
 validdata = CreateCoco('cars_validate2018/')
-validdata.load_csv('train_2k.csv')
+validdata.load_csv('validate_2k.csv')
 validdata.create_coco('annotations/instances_cars_validate2018.json')
 
