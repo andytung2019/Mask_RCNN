@@ -1,0 +1,11 @@
+dir:
+cars_train2018
+cars_validate2018
+cars_test2018
+annotations
+->
+  instances_cars_train2018.json
+
+
+
+
