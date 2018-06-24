@@ -107,7 +107,7 @@ for image_id in image_ids:
     mask, class_ids = dataset_train.load_mask(image_id)
     visualize.display_top_masks(image, mask, class_ids, dataset_train.class_names)
 
-config = ShapesConfig()
+config = CarsConfig()
 config.display()
 
 
