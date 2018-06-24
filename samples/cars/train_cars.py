@@ -96,9 +96,9 @@ dataset_validate.load_coco(DATA_DIR, subset="cars_validate", year="2018")
 dataset_validate.prepare()
 
 
-dataset_test = coco.CocoDataset()
-dataset_test.load_coco(DATA_DIR, subset="cars_test", year="2018")
-dataset_test.prepare()
+#dataset_test = coco.CocoDataset()
+#dataset_test.load_coco(DATA_DIR, subset="cars_test", year="2018")
+#dataset_test.prepare()
 
 # Load and display random samples
 image_ids = np.random.choice(dataset_train.image_ids, 4)
