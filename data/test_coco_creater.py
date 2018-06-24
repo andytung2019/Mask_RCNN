@@ -7,7 +7,7 @@ import PIL.Image
 import json
 
 
-IMAGE_DIR = ('train/')
+IMAGE_DIR = ('cars_train2018/')
 INFO = {
     "description": "China Street Vehicle Dataset",
     "url": "https://github.com/andytung2019",
@@ -137,9 +137,10 @@ class Rect:
 
 class CreateCoco:
 
-    def __init__(self):
+    def __init__(self,path):
         self.img_list = []
         self.annotation_id = 0
+        self.path = path
 
         self.coco_output = {
             "info": INFO,
@@ -169,7 +170,7 @@ class CreateCoco:
 
         for idx in range(len(self.img_list)):
             item = self.img_list[idx]
-            image = PIL.Image.open(IMAGE_DIR+item[0])
+            image = PIL.Image.open(self.path +item[0])
             image_info = {
                 "id": idx + 1,
                 "file_name": item[0],
@@ -232,11 +233,11 @@ class CreateCoco:
         with open(out_path, 'w') as output_json_file:
             json.dump(self.coco_output, output_json_file)
 
-traindata = CreateCoco()
+traindata = CreateCoco('cars_train2018/')
 traindata.load_csv('train_8k.csv')
-traindata.create_coco('train_annotaiton.json')
+traindata.create_coco('annotations/instances_cars_train2018.json')
 
-validdata = CreateCoco()
+validdata = CreateCoco('cars_validate2018/')
 validdata.load_csv('train_8k.csv')
-validdata.create_coco('valid_annotaiton.json')
+validdata.create_coco('annotations/instances_cars_validate2018.json')
 

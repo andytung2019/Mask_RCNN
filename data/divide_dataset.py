@@ -35,7 +35,7 @@ class DivideData:
 
     def move_data(self, list_img):
         for item in list_img:
-            shutil.move("train/" + item['image_name'], "valid/" + item['image_name'])
+            shutil.move("cars_train2018/" + item['image_name'], "cars_validate2018/" + item['image_name'])
 
 
 data = DivideData()
