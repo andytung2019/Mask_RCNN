@@ -48,7 +48,7 @@ class CarsConfig(Config):
     # Train on 1 GPU and 8 images per GPU. We can put multiple images on each
     # GPU because the images are small. Batch size is 8 (GPUs * images/GPU).
     GPU_COUNT = 1
-    IMAGES_PER_GPU = 2
+    IMAGES_PER_GPU = 1 
 
     # Number of classes (including background)
     NUM_CLASSES = 1 + 3  # background + 3 shapes
@@ -67,10 +67,10 @@ class CarsConfig(Config):
     #TRAIN_ROIS_PER_IMAGE = 32
 
     # Use a small epoch since the data is simple
-    STEPS_PER_EPOCH = 200
+    STEPS_PER_EPOCH = 100
 
     # use small validation steps since the epoch is small
-    VALIDATION_STEPS = STEPS_PER_EPOCH/20
+    VALIDATION_STEPS = STEPS_PER_EPOCH/2
 
 def get_ax(rows=1, cols=1, size=8):
     """Return a Matplotlib Axes array to be used in
