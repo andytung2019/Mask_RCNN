@@ -113,7 +113,7 @@ class MyCheck():
                 list_path.append(self.list_pic[idx])
             self.detect_pic_list(list_path)
             tm_end = time.clock()
-            #print("image from %d->%d time:%d", start, end, tm_end-tm_start)
+            print("image from %d->%d time:%d", start, end, tm_end-tm_start)
 
 mycheck = MyCheck()
 mycheck.get_pic_list()
