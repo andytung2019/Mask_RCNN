@@ -67,10 +67,10 @@ class CarsConfig(Config):
     #TRAIN_ROIS_PER_IMAGE = 32
 
     # Use a small epoch since the data is simple
-    STEPS_PER_EPOCH = 100
+    STEPS_PER_EPOCH = 400
 
     # use small validation steps since the epoch is small
-    VALIDATION_STEPS = STEPS_PER_EPOCH/2
+    VALIDATION_STEPS = STEPS_PER_EPOCH/20
 
 def get_ax(rows=1, cols=1, size=8):
     """Return a Matplotlib Axes array to be used in
