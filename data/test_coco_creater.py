@@ -1,3 +1,5 @@
+#encoding:utf-8
+
 import cv2 as cv
 import csv
 import numpy as np
