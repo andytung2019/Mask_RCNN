@@ -121,7 +121,7 @@ class MyCheck():
         for name_path in list_path:
             pic_name = name_path[0]
             image = skimage.io.imread(name_path[1])
-            results = self.model.detect([image])
+            results = self.model.detect([image],verbose=0)
             r = results[0]
             self.list_out.append({'image_name': pic_name, 'rois': r['rois'], 'class_ids': r['class_ids']})
 
@@ -149,7 +149,7 @@ class MyCheck():
                 end = len(self.list_pic)
             for idx in range(start, end):
                 list_path.append(self.list_pic[idx])
-            self.detect_pic_list(list_path,verbose=0)
+            self.detect_pic_list(list_path)
             tm_end = time.clock()
             print("image from %d->%d time:%d", start, end, tm_end-tm_start)
 
