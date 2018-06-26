@@ -149,7 +149,7 @@ class MyCheck():
                 end = len(self.list_pic)
             for idx in range(start, end):
                 list_path.append(self.list_pic[idx])
-            self.detect_pic_list(list_path,verbos=0)
+            self.detect_pic_list(list_path,verbose=0)
             tm_end = time.clock()
             print("image from %d->%d time:%d", start, end, tm_end-tm_start)
 
