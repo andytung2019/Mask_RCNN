@@ -121,7 +121,7 @@ class MyCheck():
         for name_path in list_path:
             pic_name = name_path[0]
             image = skimage.io.imread(name_path[1])
-            results = self.model.detect([image], verbose=1)
+            results = self.model.detect([image])
             r = results[0]
             self.list_out.append({'image_name': pic_name, 'rois': r['rois'], 'class_ids': r['class_ids']})
 
