@@ -40,7 +40,7 @@ class InferenceConfig(coco.CocoConfig):
     # Set batch size to 1 since we'll be running inference on
     # one image at a time. Batch size = GPU_COUNT * IMAGES_PER_GPU
     GPU_COUNT = 1
-    IMAGES_PER_GPU = 1
+    IMAGES_PER_GPU = 2
 
 class MyCheck():
 
@@ -53,7 +53,7 @@ class MyCheck():
 		"mrcnn_class_logits", "mrcnn_bbox_fc", "mrcnn_bbox","mrcnn_mask"
 	])
 
-        class_names = ['BG', 'person', 'bicycle', 'car', 'motorcycle',
+        class_names = ['BG',
                        'bus', 'train', 'truck'
 		      ]
 
@@ -66,7 +66,7 @@ class MyCheck():
     #保存所有图片到列表
     def get_pic_list(self):
         pic_subfix = ['jpg', 'JPG', 'JPEG', 'jpeg', 'png']
-        path = './images'
+        path = '../data/test_a'
         path = os.path.expanduser(path)
         for (dirname, subdir, subfile) in os.walk(path):
             for f in subfile:
@@ -84,7 +84,7 @@ class MyCheck():
         for name_path in list_path:
             pic_name = name_path[0]
             image = skimage.io.imread(name_path[1])
-            results = self.model.detect([image], verbose=1)
+            results = self.model.detect([image], verbose=0)
             r = results[0]
             self.list_out.append({'image_name': pic_name, 'rois': r['rois'], 'class_ids': r['class_ids']})
 
